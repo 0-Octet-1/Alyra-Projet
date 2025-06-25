@@ -343,7 +343,18 @@ def show_correlations(df):
     corr_df = corr_df.drop('Abs_Correlation', axis=1)
     
     # Enlever les duplications (la corrélation entre A et B est la même qu'entre B et A)
-    corr_df['Pair'] = corr_df.apply(lambda x: '_'.join(sorted([x['Feature 1'], x['Feature 2']])), axis=1)
+    # Créer une colonne de paires triées pour identifier les doublons
+    pairs = []
+    for _, row in corr_df.iterrows():
+        # Trier les deux features alphabétiquement
+        sorted_features = sorted([row['Feature 1'], row['Feature 2']])
+        # Joindre avec un underscore
+        pairs.append('_'.join(sorted_features))
+    
+    # Ajouter la colonne des paires au DataFrame
+    corr_df['Pair'] = pairs
+    
+    # Supprimer les duplicats et la colonne Pair
     corr_df = corr_df.drop_duplicates('Pair').drop('Pair', axis=1)
     
     # Afficher les corrélations les plus fortes
