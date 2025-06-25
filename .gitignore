@@ -56,6 +56,9 @@ yarn-error.log*
 ehthumbs.db
 Thumbs.db
 
+# Fichiers de préparation à la certification
+PREPA_Certif*.md
+
 # TensorFlow/Keras
 .keras/
 keras.json
