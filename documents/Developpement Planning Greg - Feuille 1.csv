@@ -1,0 +1,39 @@
+Colonne 1,Colonne 2,Colonne 3,Colonne 4,Colonne 5,Colonne 6
+Date de début : 19 Juin 2025,,,FALSE,Durée Restante : ~ 5 semaines,
+Date de certification : 23 Juillet 2025,,,FALSE,,
+Phase / Semaine,Jour,Date,FALSE,Activité Principale (Développeur IA),Points Clés pour les Consultants IA
+Semaine 1 : Préparation et Structuration,Jeu,19/06,FALSE,Lancement du projet & Présentation du CDC/Planning aux consultants. Vérification de l'environnement.,Compréhension globale du projet et attentes.
+,Ven,20/06,FALSE,Coder et exécuter le script de génération du dataset synthétique (structuré).,Vue sur la logique de labélisation.
+,Sam,21/06,FALSE,Finalisation du script de génération du dataset structuré.,-
+,Dim,22/06,FALSE,Identification/Collecte de quelques images pertinentes pour la partie DL (si incluse).,Vue sur le type d'images recherchées.
+,Lun,23/06,FALSE,Structuration des dossiers du projet.,-
+,Mar,24/06,FALSE,Exploration préliminaire du dataset généré. Préparation du notebook 01_Data_Preparation.ipynb.,Compréhension des données brutes.
+,Mer,25/06,FALSE,Avancement 01_Data_Preparation.ipynb.,-
+Semaine 2 : Modélisation ML & Prétraitement Avancé,Jeu,26/06,FALSE,Prétraitement: Nettoyage des données (gestion des valeurs manquantes).,Justification des méthodes d'imputation.
+,Ven,27/06,FALSE,Prétraitement: Encodage des variables catégorielles (OneHotEncoder).,Compréhension des transformations.
+,Sam,28/06,FALSE,Prétraitement: Standardisation des variables numériques (StandardScaler).,Justification de la standardisation.
+,Dim,29/06,FALSE,Prétraitement: Division du dataset (Train/Val/Test) avec stratification.,Validation de la répartition des données.
+,Lun,30/06,FALSE,Préparation du notebook 02_ML_Model_Training_Evaluation.ipynb.,-
+,Mar,01/07,FALSE,Modélisation ML (Bloc 03): Implémentation et entraînement du modèle (ex: Random Forest).,Vue sur les hyperparamètres.
+,Mer,02/07,FALSE,"Évaluation du modèle ML (métriques, matrice de confusion) & Analyse d'importance des features.",Compréhension des résultats ML et facteurs clés.
+Semaine 3 : Deep Learning & Comparaison,Jeu,03/07,FALSE,"Prétraitement Images (DL - Bloc 05): Redimensionnement, normalisation, augmentation (si inclus).",Compréhension du pipeline d'images.
+,Ven,04/07,FALSE,Préparation du notebook 03_DL_Model_Training_Evaluation.ipynb.,-
+,Sam,05/07,FALSE,Modélisation DL (Bloc 05): Implémentation de l'architecture du modèle (ANN ou CNN).,Vue sur les choix d'architecture.
+,Dim,06/07,FALSE,"Modélisation DL (Bloc 05): Entraînement du modèle avec callbacks (EarlyStopping, ReduceLROnPlateau).",Suivi de la convergence du modèle.
+,Lun,07/07,FALSE,"Évaluation du modèle DL (métriques, matrice de confusion, courbes d'apprentissage).",Analyse des performances DL.
+,Mar,08/07,FALSE,Préparation du notebook 04_Model_Comparison_Selection.ipynb.,-
+,Mer,09/07,FALSE,Comparaison des performances ML vs DL & Justification du modèle final.,Validation du choix du modèle à déployer.
+Semaine 4 : Déploiement API & Documentation,Jeu,10/07,FALSE,Sauvegarde du modèle final (HDF5 ou Keras).,Vue sur le fichier modèle.
+,Ven,11/07,FALSE,Déploiement API (Bloc 05): Développement de l'API FastAPI (endpoints tabulaires et images).,Compréhension de l'API et ses endpoints.
+,Sam,12/07,FALSE,Déploiement API (Bloc 05): Développement de l'interface web de démonstration (HTML/JS/CSS).,Visualisation de l'interaction.
+,Dim,13/07,FALSE,Documentation: Rédaction du Dossier Technique (sections Préparation des Données & Modélisation).,Relecture des sections techniques.
+,Lun,14/07,FALSE,Tests initiaux de l'API et de l'interface web.,Validation des appels API.
+,Mar,15/07,FALSE,"Rédaction du Dossier Technique (sections Évaluation, Déploiement, Perspectives).",Relecture des sections finales.
+,Mer,16/07,FALSE,Préparation des premières ébauches de la présentation orale.,Conseils sur la structure et le message.
+"Semaine 5 : Tests, Optimisation & Préparation Finale",Jeu,17/07,FALSE,Jour de Tests & Optimisation (1/5): Tests approfondis de l'application complète.,"Remontée de bugs, suggestions d'amélioration."
+,Ven,18/07,FALSE,"Jour de Tests & Optimisation (2/5): Résolution des problèmes détectés, micro-ajustements.",Validation des corrections.
+,Sam,19/07,FALSE,Jour de Tests & Optimisation (3/5): Finalisation de tous les notebooks et commentaires.,Vérification de la complétude.
+,Dim,20/07,FALSE,Jour de Tests & Optimisation (4/5): Finalisation du Dossier Technique (relecture finale).,Relecture finale du dossier.
+,Lun,21/07,FALSE,Jour de Tests & Optimisation (5/5): Répétition Générale de la soutenance avec les consultants.,"Simulation du jury, feedbacks sur la clarté, le rythme, les réponses."
+,Mar,22/07,FALSE,Derniers ajustements suite à la répétition. Préparation des livrables finaux. REPOS !,-
+,Mer,23/07,FALSE,Jour de la CERTIFICATION !,SOUTENANCE
