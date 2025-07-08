@@ -1,175 +1,112 @@
-# Plan pour le projet de certification Développeur IA
-## **Amélioration de l'Accessibilité PMR en Milieu Urbain**
+# Plan d'action accéléré pour le projet de certification PMR
 
----
+## CONTEXTE PROJET
+- **Certification prévue :** 23 juillet 2025
+- **Temps disponible :** 10 jours, 2-3h par jour
+- **Priorité :** Livrables essentiels, démonstration fonctionnelle, documentation synthétique
+- **Stratégie :** Production rapide du code complet avec commentaires pédagogiques détaillés
 
-## 📋 **Informations Générales**
+## ÉTAT ACTUEL DU PROJET (Mise à jour 7 juillet 2025)
 
-- **Projet** : Développer une solution IA pour prédire la difficulté d'accessibilité PMR de points d'intérêt urbains
-- **Certification** : RNCP38616 - Développeur IA (Blocs 03 & 05)
-- **Période** : 19 juin 2025 → 23 juillet 2025 (~5 semaines)
-- **Objectif** : Comparaison ML vs Deep Learning pour classification d'accessibilité
-- **Langue** : Français
+### TERMINÉ ET FONCTIONNEL
+- **Pipeline de données complet :** 3 scripts professionnels créés et testés
+  - `data_generation.py` : Génère dataset brut 4000 échantillons PMR (11 features + target)
+  - `data_splitting.py` : Split stratifié 70/15/15% train/val/test
+  - `data_preprocessing.py` : Imputation, standardisation, encodage
+- **Outils de gestion :**
+  - `clean_all_data.py` : Script de nettoyage complet pour repartir à zéro
+  - `data_pipeline_dashboard.html` : Interface web interactive pour piloter le pipeline
+- **Structure de données optimisée :** Sauvegarde double format (CSV + PKL), métadonnées JSON, séparation claire des dossiers
+- **Workflow MLOps professionnel :** Traçabilité complète, reproductibilité, bonnes pratiques
 
----
+### EN COURS / À REFAIRE
+- **Modèles ML :** Scripts créés précédemment, à recréer après nettoyage (Random Forest, Logistic Regression)
+- **Modèles DL :** À créer (ANN pour données tabulaires)
+- **API FastAPI :** Dossier vide, à développer
+- **Interface frontend :** Dossier vide, dashboard HTML créé comme alternative
+- **Documentation finale :** À rédiger de manière synthétique
+  - Cahier des charges (CDC-PMR.TXT)
+  - README.md complet
+  - Plan détaillé
+  - Requirements.txt
+  - Présentation pour jury
 
-## 🎯 **Objectifs Spécifiques**
+## 📋 TASK LIST - ÉTAT D'AVANCEMENT
+
+- [x] **Pipeline de données professionnel** (data_generation.py, data_splitting.py, data_preprocessing.py)
+- [x] **Outils de gestion** (clean_all_data.py, data_pipeline_dashboard.html)
+- [ ] **Recréer modèles ML** (Random Forest, Logistic Regression)
+- [ ] **Implémenter modèles Deep Learning** (ANN pour données tabulaires)
+- [ ] **Comparer performances ML vs DL**
+- [ ] **Développer API FastAPI** pour prédiction
+- [ ] **Interface web de démonstration** (dashboard HTML créé, à adapter si besoin)
+- [ ] **Documentation technique synthétique**
+- [ ] **Support de présentation orale**
+
+## 🗓️ PLANNING RESTANT (8-23 juillet) - 10 JOURS
+
+| **Jour** | **Tâches Principales** | **Livrables** |
+|----------|------------------------|---------------|
+| **8-9 juillet** | Recréer et entraîner modèles ML | `ml_training_complete.py` |
+| **10-11 juillet** | Créer et entraîner modèles DL | `dl_training.py` |
+| **12-13 juillet** | Développer API FastAPI | `api/api_accessibilite.py` |
+| **14-15 juillet** | Interface web finale | `frontend/` ou adaptation dashboard |
+| **16-17 juillet** | Tests finaux, intégration | Notebooks de comparaison |
+| **18-22 juillet** | Documentation, préparation | README, présentation |
+| **23 juillet** | **🎯 CERTIFICATION** | **Soutenance finale** |
+
+## 🎯 **OBJECTIFS DE CERTIFICATION**
 
 ### **Bloc 03 - Machine Learning**
-- ✅ **Classification ML** : Prédire 3 niveaux d'accessibilité ("Facilement", "Modérément", "Difficilement Accessible")
-- ✅ **Algorithmes** : Régression Logistique (baseline) + Random Forest (modèle principal)
-- ✅ **Évaluation** : Accuracy, Précision, Rappel, F1-score, Matrice de confusion
-- ✅ **Facteurs clés** : Identifier les caractéristiques influençant l'accessibilité
+- **Classification PMR** : 3 niveaux d'accessibilité (Facile/Modérée/Difficile)
+- **Algorithmes** : Logistic Regression (baseline) + Random Forest (principal)
+- **Évaluation** : Accuracy ≥ 85%, F1-score ≥ 0.80
+- **Analyse** : Importance des features, matrices de confusion
 
 ### **Bloc 05 - Deep Learning**
-- ✅ **Classification DL** : Même prédiction avec approche Deep Learning
-- ✅ **Données non structurées** : Traitement d'images (entrées de lieux)
-- ✅ **Architectures** : ANN (données tabulaires) + CNN (Transfer Learning avec MobileNetV2)
-- ✅ **Déploiement** : API FastAPI avec endpoints ML/DL
+- **Architecture ANN** : Réseau de neurones pour données tabulaires
+- **Comparaison ML vs DL** : Performance, temps d'entraînement, interprétabilité
+- **Déploiement** : API FastAPI avec endpoints de prédiction
+- **Interface** : Démonstration web fonctionnelle
 
----
+## 📁 **STRUCTURE DU PROJET**
 
-## 📊 **Structure des Données**
-
-### **Dataset Synthétique**
-- **Variables** : largeur_trottoir_cm, pente_acces_degres, type_lieu, presence_rampe, etc.
-- **Classes cibles** : 3 niveaux d'accessibilité
-- **Images** : Photos d'entrées de lieux (optionnel pour DL)
-- **Prétraitement** : StandardScaler, OneHotEncoder, division 70/15/15%
-
----
-
-## 📅 **Planning Détaillé (5 semaines)**
-
-### **Semaine 1 (19-25 juin) : Génération & Préparation des Données**
-- **Livrable** : `01_Data_Preparation.ipynb`
-- **Objectifs** :
-  - Générer dataset synthétique PMR avec variables pertinentes
-  - Analyse exploratoire des données (EDA)
-  - Nettoyage, imputation des valeurs manquantes
-  - Encodage variables catégorielles (OneHotEncoder)
-  - Normalisation (StandardScaler)
-  - Division train/validation/test (70/15/15%)
-- **Technologies** : pandas, numpy, matplotlib, seaborn, sklearn
-
-### **Semaine 2 (26 juin - 2 juillet) : Modélisation Machine Learning**
-- **Livrable** : `02_ML_Model_Training_Evaluation.ipynb`
-- **Objectifs** :
-  - Implémentation Régression Logistique (baseline)
-  - Développement Random Forest (modèle principal)
-  - Optimisation hyperparamètres
-  - Évaluation complète (métriques, matrice confusion)
-  - Analyse importance des features
-- **Technologies** : sklearn (LogisticRegression, RandomForestClassifier)
-
-### **Semaine 3 (3-9 juillet) : Deep Learning & Comparaison**
-- **Livrable** : `03_DL_Model_Training_Evaluation.ipynb`
-- **Objectifs** :
-  - Architecture ANN pour données tabulaires
-  - CNN avec Transfer Learning (MobileNetV2) pour images
-  - Callbacks (EarlyStopping, ReduceLROnPlateau)
-  - Évaluation et visualisations (courbes d'apprentissage)
-  - Comparaison ML vs DL
-- **Technologies** : TensorFlow/Keras, tf.keras.applications.MobileNetV2
-
-### **Semaine 4 (10-16 juillet) : Déploiement & Interface**
-- **Livrables** : `04_Model_Comparison_Selection.ipynb`, `api_accessibilite.py`, `frontend_demo/`
-- **Objectifs** :
-  - Sélection modèle final (ML vs DL)
-  - API FastAPI avec endpoints :
-    - `/predict_tabular` (données structurées)
-    - `/predict_image` (analyse d'images)
-  - Interface web de démonstration
-  - Documentation technique
-- **Technologies** : FastAPI, HTML/CSS/JavaScript
-
-### **Semaine 5 (17-23 juillet) : Tests & Soutenance**
-- **Livrables** : Dossier Technique, Présentation
-- **Objectifs** :
-  - Tests finaux et optimisations
-  - Rédaction dossier technique complet
-  - Préparation présentation orale
-  - **Certification : 23 juillet 2025**
-
----
-
-## 🏗️ **Architecture Technique**
-
-### **Modèles ML**
-```python
-# Baseline
-LogisticRegression(C=1.0, random_state=42)
-
-# Modèle principal
-RandomForestClassifier(
-    n_estimators=100,
-    max_depth=10,
-    min_samples_leaf=5,
-    random_state=42
-)
+```
+PMR/
+├── data/
+│   ├── raw/           # Dataset brut généré
+│   ├── split/         # Données train/val/test
+│   └── preprocessed/  # Données finales pour ML/DL
+├── models/            # Modèles entraînés (.pkl, .h5)
+├── notebooks/         # Scripts Python du pipeline
+├── api/              # API FastAPI (à créer)
+├── frontend/         # Interface web (à créer)
+└── docs/             # Documentation
 ```
 
-### **Modèles DL**
-```python
-# ANN pour données tabulaires
-model = Sequential([
-    Dense(128, activation='relu'),
-    Dropout(0.2),
-    Dense(64, activation='relu'),
-    Dropout(0.2),
-    Dense(3, activation='softmax')  # 3 classes
-])
+## 🚀 **COMMANDES RAPIDES**
 
-# CNN avec Transfer Learning
-base_model = MobileNetV2(weights='imagenet', include_top=False)
-base_model.trainable = False
+### **Pipeline complet :**
+```bash
+cd notebooks
+python data_generation.py
+python data_splitting.py
+python data_preprocessing.py
+python ml_training_complete.py
+python dl_training.py
 ```
 
-### **API FastAPI**
-```python
-@app.post("/predict_tabular")
-async def predict_tabular(data: dict):
-    # Prétraitement + prédiction ML/DL
-    return {"niveau_difficulte": "...", "probabilites": {...}}
-
-@app.post("/predict_image")
-async def predict_image(file: UploadFile):
-    # Traitement image + prédiction CNN
-    return {"resultat_visuel": "..."}
+### **Nettoyage :**
+```bash
+python clean_all_data.py
 ```
+
+### **Dashboard :**
+Ouvrir `notebooks/data_pipeline_dashboard.html` dans le navigateur
 
 ---
 
-## 📋 **Livrables Finaux**
-
-### **Code & Notebooks**
-1. **`01_Data_Preparation.ipynb`** - Génération dataset + prétraitement
-2. **`02_ML_Model_Training_Evaluation.ipynb`** - Random Forest + évaluation
-3. **`03_DL_Model_Training_Evaluation.ipynb`** - ANN/CNN + évaluation  
-4. **`04_Model_Comparison_Selection.ipynb`** - Comparaison finale
-5. **`api_accessibilite.py`** - API FastAPI complète
-6. **`frontend_demo/`** - Interface web (HTML/CSS/JS)
-
-### **Documentation**
-7. **Dossier Technique** - Document structuré (Word/PDF)
-8. **Présentation** - Support visuel pour soutenance orale
-
----
-
-## 🎯 **Critères de Réussite**
-
-### **Performance Technique**
-- **F1-score macro ≥ 75%** sur ensemble de test
-- **Focus classe "Difficilement Accessible"** (la plus critique)
-- **API fonctionnelle** avec démonstration fluide
-- **Interface web interactive**
-
-### **Compétences Démontrées**
-- ✅ Justification de chaque choix technique
-- ✅ Maîtrise prétraitement données structurées/non structurées
-- ✅ Comparaison rigoureuse ML vs DL
-- ✅ Déploiement MLOps (API + interface)
-- ✅ Considérations éthiques (biais, confidentialité)
+**📅 Dernière mise à jour :** 7 juillet 2025 - Pipeline de données terminé ✅
 
 ---
 

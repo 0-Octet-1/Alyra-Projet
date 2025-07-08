@@ -1,0 +1,11 @@
+{
+  "split_strategy": "stratified",
+  "train_size": 2800,
+  "val_size": 600,
+  "test_size": 600,
+  "train_ratio": 0.7,
+  "val_ratio": 0.15,
+  "test_ratio": 0.15,
+  "random_state": 42,
+  "split_date": "2025-07-08T18:35:54.488696"
+}

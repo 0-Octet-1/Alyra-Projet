@@ -1,0 +1,33 @@
+{
+  "imputation_strategy": "median",
+  "scaling_method": "StandardScaler",
+  "encoding_method": "LabelEncoder",
+  "numerical_features": [
+    "largeur_passage",
+    "hauteur_marche",
+    "pente_rampe",
+    "places_parking",
+    "distance_transport"
+  ],
+  "categorical_features": [
+    "presence_rampe",
+    "surface_sol",
+    "eclairage",
+    "signalisation",
+    "assistance_disponible",
+    "horaires_adaptes"
+  ],
+  "preprocessing_date": "2025-07-08T18:36:14.032565",
+  "train_shape": [
+    2800,
+    11
+  ],
+  "val_shape": [
+    600,
+    11
+  ],
+  "test_shape": [
+    600,
+    11
+  ]
+}

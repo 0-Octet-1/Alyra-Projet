@@ -1,0 +1,8 @@
+{
+  "n_samples": 4000,
+  "n_features": 11,
+  "target_column": "accessibilite_pmr",
+  "missing_values": 168,
+  "generation_date": "2025-07-08T18:35:43.075553",
+  "random_state": 42
+}

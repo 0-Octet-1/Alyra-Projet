@@ -1,0 +1,148 @@
+{
+  "timestamp": "20250708_185548",
+  "models": {
+    "Simple MLP": {
+      "accuracy": 0.9616666666666667,
+      "f1_macro": 0.9136220964870568,
+      "f1_weighted": 0.9616634965546211,
+      "precision_macro": 0.9237467673880495,
+      "recall_macro": 0.9057612340710932,
+      "confusion_matrix": [
+        [
+          23,
+          5,
+          0
+        ],
+        [
+          2,
+          485,
+          10
+        ],
+        [
+          0,
+          6,
+          69
+        ]
+      ],
+      "n_iterations": 53,
+      "final_loss": 0.046488513723608016
+    },
+    "Deep MLP": {
+      "accuracy": 0.9683333333333334,
+      "f1_macro": 0.9292101633541381,
+      "f1_weighted": 0.9683891323147242,
+      "precision_macro": 0.9275355728029752,
+      "recall_macro": 0.9309121395036888,
+      "confusion_matrix": [
+        [
+          25,
+          3,
+          0
+        ],
+        [
+          3,
+          487,
+          7
+        ],
+        [
+          0,
+          6,
+          69
+        ]
+      ],
+      "n_iterations": 51,
+      "final_loss": 0.01693392385281465
+    },
+    "Wide MLP": {
+      "accuracy": 0.97,
+      "f1_macro": 0.9309405498921629,
+      "f1_weighted": 0.9700443131390712,
+      "precision_macro": 0.9352164947101657,
+      "recall_macro": 0.9278962664878158,
+      "confusion_matrix": [
+        [
+          24,
+          4,
+          0
+        ],
+        [
+          2,
+          487,
+          8
+        ],
+        [
+          0,
+          4,
+          71
+        ]
+      ],
+      "n_iterations": 73,
+      "final_loss": 0.004001392278779542
+    },
+    "Optimized MLP": {
+      "accuracy": 0.9816666666666667,
+      "f1_macro": 0.9612123143378123,
+      "f1_weighted": 0.9817704958663055,
+      "precision_macro": 0.9526674172772176,
+      "recall_macro": 0.9700670690811536,
+      "confusion_matrix": [
+        [
+          27,
+          1,
+          0
+        ],
+        [
+          2,
+          490,
+          5
+        ],
+        [
+          0,
+          3,
+          72
+        ]
+      ],
+      "n_iterations": 172,
+      "final_loss": 0.0018334559511727047
+    },
+    "Optimized MLP (GridSearch)": {
+      "accuracy": 0.9833333333333333,
+      "f1_macro": 0.9538822573054379,
+      "f1_weighted": 0.9830624502631241,
+      "precision_macro": 0.976735512848833,
+      "recall_macro": 0.9332617929801028,
+      "confusion_matrix": [
+        [
+          24,
+          4,
+          0
+        ],
+        [
+          1,
+          495,
+          1
+        ],
+        [
+          0,
+          4,
+          71
+        ]
+      ],
+      "n_iterations": 58,
+      "final_loss": 0.0338183373892329
+    }
+  },
+  "model_files": {
+    "Simple MLP": "mlp_simple_mlp_20250708_185548.pkl",
+    "Deep MLP": "mlp_deep_mlp_20250708_185548.pkl",
+    "Wide MLP": "mlp_wide_mlp_20250708_185548.pkl",
+    "Optimized MLP": "mlp_optimized_mlp_20250708_185548.pkl",
+    "Optimized MLP (GridSearch)": "mlp_optimized_mlp_(gridsearch)_20250708_185548.pkl"
+  },
+  "training_info": {
+    "framework": "scikit-learn MLPClassifier",
+    "max_iterations": 500,
+    "early_stopping": true,
+    "validation_fraction": 0.2
+  }
+}

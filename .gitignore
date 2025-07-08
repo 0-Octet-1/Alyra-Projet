@@ -58,6 +58,7 @@ Thumbs.db
 
 # Fichiers de préparation à la certification
 PREPA_Certif*.md
+documents/PreparationCertif/
 
 # TensorFlow/Keras
 .keras/

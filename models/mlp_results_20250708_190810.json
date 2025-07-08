@@ -1,0 +1,56 @@
+{
+  "timestamp": "20250708_190810",
+  "models": {
+    "MLP Simple": {
+      "accuracy": 0.965,
+      "f1_macro": 0.9261602823246659,
+      "f1_weighted": 0.9646465332081772,
+      "precision_macro": 0.9385074897765918,
+      "recall_macro": 0.9144757433489827,
+      "confusion_matrix": [
+        [
+          25,
+          3,
+          0
+        ],
+        [
+          2,
+          489,
+          6
+        ],
+        [
+          0,
+          10,
+          65
+        ]
+      ],
+      "n_iterations": 45
+    },
+    "MLP Profond": {
+      "accuracy": 0.975,
+      "f1_macro": 0.9435027649688168,
+      "f1_weighted": 0.975060511298387,
+      "precision_macro": 0.9385907180818194,
+      "recall_macro": 0.9486027274759671,
+      "confusion_matrix": [
+        [
+          26,
+          2,
+          0
+        ],
+        [
+          3,
+          489,
+          5
+        ],
+        [
+          0,
+          5,
+          70
+        ]
+      ],
+      "n_iterations": 47
+    }
+  },
+  "framework": "scikit-learn MLPClassifier"
+}
