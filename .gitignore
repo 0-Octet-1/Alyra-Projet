@@ -47,6 +47,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Dossier de préparation jury (non versionné)
+Jury/
+
 # Système d'exploitation
 .DS_Store
 .DS_Store?

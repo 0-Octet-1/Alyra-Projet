@@ -1,158 +1,207 @@
-# 🏗️ Projet PMR - Accessibilité en Milieu Urbain
+# 🏗️ PMR-AI : Prédiction d'Accessibilité pour Personnes à Mobilité Réduite
 
-## 📋 Présentation du projet
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![F1-Score](https://img.shields.io/badge/F1--Score-94.4%25-brightgreen)](https://github.com/0-Octet-1/Alyra-Projet)
 
-Ce projet a été développé dans le cadre de la certification **Développeur IA** (RNCP38616) - Blocs 03 & 05 - Machine Learning & Deep Learning.
+## 🌟 Aperçu du Projet
 
-L'objectif est de développer une solution d'intelligence artificielle permettant de prédire la difficulté d'accessibilité PMR (Personnes à Mobilité Réduite) de points d'intérêt urbains, classés en 3 catégories :
-- **Facilement Accessible**
-- **Modérément Accessible**
-- **Difficilement Accessible**
+**PMR-AI** est une solution d'IA qui prédit l'accessibilité des lieux publics pour les personnes à mobilité réduite (PMR). Ce projet a été développé dans le cadre de la certification **Développeur IA** (RNCP38616) - Blocs 03 & 05.
 
-## 📅 Planning du projet
+### 🎯 Objectifs
+- Prédire le niveau d'accessibilité des lieux publics (3 classes)
+- Fournir une API REST pour les prédictions en temps réel
+- Offrir une interface utilisateur intuitive
+- Atteindre une précision optimale (F1-score > 75%)
 
-- **Début**: 19 juin 2025
-- **Date de certification**: 23 juillet 2025
-- **Durée totale**: ~5 semaines
+### 🏆 Résultats
+- **F1-Score** : 94.4% (Objectif : 75%)
+- **Accuracy** : 97.5%
+- **Temps de réponse** : < 1 seconde
 
-## 🏁 Objectifs pédagogiques
+## 🚀 Fonctionnalités
 
-Ce projet démontre les compétences suivantes :
-- Génération et prétraitement de données synthétiques
-- Exploration et visualisation des données avec DuckDB et Streamlit
-- Implémentation de modèles de Machine Learning (Random Forest, Logistic Regression)
-- Développement de modèles de Deep Learning (ANN/CNN avec TensorFlow/Keras)
-- Évaluation et comparaison des performances des modèles
-- Déploiement via une API FastAPI et interface web
+### 🧠 Modèles Implémentés
+- **Machine Learning**
+  - Random Forest (79.1% F1-score)
+  - Régression Logistique (74.4% F1-score)
+- **Deep Learning**
+  - MLP Simple (92.6% F1-score)
+  - MLP Profond (94.4% F1-score) 🏆
 
-## 🗂️ Structure du projet
+### 🌐 Déploiement
+- **API REST** avec FastAPI
+- Interface Web interactive
+- Prédictions par lot (batch) et en temps réel
+- Documentation Swagger intégrée
 
-```
-PMR/
-├── api/                  # API FastAPI pour prédiction (endpoints /predict_tabular et /predict_image)
-├── code/
-│   ├── app_data_exploration.py         # Interface Streamlit pour explorer les données
-│   └── data_preparation_duckdb.py      # Script de préparation des données avec DuckDB
-├── data/
-│   ├── processed/            # Données prétraitées (fichiers pkl)
-│   └── preprocessed/         # Données prétraitées pour les modèles
-├── documents/              # Documentation technique et présentation
-├── frontend/              # Interface web de démonstration (en cours)
-├── models/                # Modèles entraînés et sauvegardés (en cours) 
-├── notebooks/
-│   ├── data_preparation.py            # Script de génération et prétraitement des données
-│   ├── 01_Data_Preparation.ipynb      # Notebook pédagogique de préparation des données (en cours)
-│   ├── 02_ML_Model_Training_Evaluation.ipynb (en cours)
-│   ├── 03_DL_Model_Training_Evaluation.ipynb (en cours)
-│   └── 04_Model_Comparison_Selection.ipynb (en cours)
-└── documents/            # Documentation technique et présentation
-```
+### 📊 Données
+- 4000 points d'intérêt urbains
+- 11 caractéristiques techniques
+- 3 classes d'accessibilité
+- Données synthétiques réalistes
 
-## 💻 Comment utiliser ce projet
+## 🛠 Installation
 
 ### Prérequis
+- Python 3.8+
+- pip
+- Git
 
-1. Python 3.8+ installé
-2. Package manager pip
-3. Environnement virtuel (recommandé)
+### Étapes d'Installation
 
-### Installation
-
-1. Clonez ce dépôt :
-   ```
+1. **Cloner le dépôt**
+   ```bash
    git clone https://github.com/0-Octet-1/Alyra-Projet.git
    cd PMR
    ```
 
-2. Créez et activez un environnement virtuel :
-   ```
+2. **Créer un environnement virtuel**
+   ```bash
+   # Windows
    python -m venv venv
-   source venv/bin/activate    # Sur Windows : venv\Scripts\activate
+   .\venv\Scripts\activate
+   
+   # Linux/MacOS
+   python3 -m venv venv
+   source venv/bin/activate
    ```
 
-3. Installez les dépendances :
-   ```
+3. **Installer les dépendances**
+   ```bash
    pip install -r requirements.txt
    ```
 
-### Exploration des données avec Streamlit
+## 🚦 Utilisation
 
-Pour lancer l'interface d'exploration des données :
+### 1. Lancer l'API
+```bash
+# Depuis le dossier racine
+cd api
+uvicorn main:app --reload
 ```
-streamlit run code/app_data_exploration.py
+L'API sera disponible à l'adresse : http://localhost:8000
+
+### 2. Accéder à l'interface web
+```bash
+# Depuis le dossier racine
+cd frontend
+python serve.py
 ```
+Ouvrez votre navigateur à l'adresse : http://localhost:3000
 
-L'interface Streamlit permet d'explorer les données avec :
-- Description complète de la base de données
-- Statistiques descriptives 
-- Matrice de corrélation interactive
-- Visualisations graphiques
+### 3. Utilisation de l'API
 
-### Génération et prétraitement des données
-
-Pour générer le dataset synthétique et le prétraiter :
-```
-python notebooks/data_preparation.py
-```
-Cette commande crée un dataset de 5000 exemples avec variables descriptives, infrastructurelles et contextuelles, ainsi que les labels d'accessibilité PMR.
-
-### Préparation des données avec DuckDB
-
-Pour préparer les données avec DuckDB :
-```
-python code/data_preparation_duckdb.py
-```
-
-### Modèles disponibles (en cours de développement)
-
-1. **Machine Learning** :
-   - Random Forest Classifier
-   - Logistic Regression
-
-2. **Deep Learning** :
-   - ANN (réseau de neurones tabulaire)
-   - CNN (MobileNetV2 pour traitement d'images si disponibles)
-
-### Déploiement de l'API (en cours de développement)
-
-Pour lancer l'API de prédiction :
-```
-uvicorn api.api_accessibilite:app --reload
+**Prédiction unique**
+```bash
+curl -X 'POST' \
+  'http://localhost:8000/predict?model_type=dl' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "largeur_trottoir": 2.5,
+    "hauteur_bordure": 0.15,
+    "pente_acces": 5.0,
+    "distance_transport": 150.0,
+    "eclairage_qualite": 4,
+    "surface_qualite": 4,
+    "signalisation_presence": 1,
+    "obstacles_nombre": 2,
+    "rampe_presence": 1,
+    "places_pmr_nombre": 3,
+    "type_poi": "restaurant"
+  }'
 ```
 
-L'API sera accessible à l'adresse http://localhost:8000
+**Réponse attendue**
+```json
+{
+  "prediction": 2,
+  "prediction_label": "Accessible",
+  "confidence": 0.94,
+  "probabilities": {
+    "Non accessible": 0.02,
+    "Partiellement accessible": 0.04,
+    "Accessible": 0.94
+  },
+  "model_used": "MLP Profond (Deep Learning)",
+  "timestamp": "2025-07-08T20:00:00"
+}
+```
 
-## 📊 État d'avancement du projet
+## 📁 Structure du Projet
 
-### Composées développées :
+```
+PMR/
+├── api/                    # API FastAPI
+│   ├── main.py            # Points d'entrée de l'API
+│   ├── models.py          # Chargement des modèles
+│   ├── schemas.py         # Modèles Pydantic
+│   └── test_api.py        # Tests automatisés
+├── data/                  # Données
+│   ├── raw/               # Données brutes
+│   ├── split/             # Données divisées
+│   └── preprocessed/      # Données prétraitées
+├── frontend/              # Interface utilisateur
+│   ├── index.html         # Application web
+│   └── serve.py           # Serveur local
+├── models/                # Modèles sauvegardés
+│   ├── mlp_*             # Modèles MLP
+│   └── rf_*              # Modèles Random Forest
+├── notebooks/             # Notebooks et scripts
+│   ├── data_generation.py
+│   ├── data_splitting.py
+│   ├── data_preprocessing.py
+│   ├── ml_training_complete.py
+│   └── dl_training_simple.py
+└── docs/                  # Documentation
+    ├── documentation_technique.md
+    └── presentation_certification.md
+```
 
-- [x] Génération du dataset synthétique PMR avec données réalistes
-- [x] Prétraitement des données (imputation, encodage, standardisation)
-- [x] Interface d'exploration des données avec Streamlit
-- [x] Intégration avec DuckDB pour la gestion des données
-- [x] Analyse exploratoire des données (EDA)
+## 📊 Résultats Détail
 
-### En cours de développement :
+### Performances des Modèles
+| Modèle | F1-Score | Accuracy | Temps d'inférence |
+|--------|----------|----------|-------------------|
+| MLP Profond | 94.4% | 97.5% | < 1s |
+| MLP Simple | 92.6% | 96.5% | < 1s |
+| Random Forest | 79.1% | 92.5% | < 0.1s |
+| Régression Logistique | 74.4% | 92.5% | < 0.1s |
 
-- [ ] Modèles de Machine Learning (Random Forest, Logistic Regression)
-- [ ] Modèles de Deep Learning (ANN, CNN avec MobileNetV2)
-- [ ] API FastAPI pour les prédictions
-- [ ] Interface web de démonstration
-- [ ] Documentation technique complète
+### Matrice de Confusion (MLP Profond)
+```
+                Prédit
+Réel      0    1    2
+    0    26    2    0   (93% précision)
+    1     3  489    5   (98% précision)  
+    2     0    5   70   (93% précision)
+```
 
-## 📊 Métriques et performances attendues
+## 🤝 Contribution
 
-Le projet vise un **F1-score macro ≥ 75%**, avec une attention particulière sur la détection correcte de la classe "Difficilement Accessible" (critique pour les utilisateurs PMR).
+Les contributions sont les bienvenues ! Voici comment contribuer :
 
-## 👬 Auteur
+1. Forkez le projet
+2. Créez une branche (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Poussez vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
 
-**Créé par**: [0-Octet-1](https://github.com/0-Octet-1)
+## 📄 Licence
 
-_Projet développé dans le cadre de la certification Développeur IA chez Alyra, juin-juillet 2025_
+Distribué sous licence MIT. Voir le fichier `LICENSE` pour plus d'informations.
 
-## 📝 Auteur
+## 📧 Contact
 
-Ce projet a été réalisé dans le cadre de la certification Développeur IA d'Alyra.
+0-Octet-1 - [@votretwitter](https://twitter.com/votretwitter)
+
+Lien du projet : [https://github.com/0-Octet-1/Alyra-Projet](https://github.com/0-Octet-1/Alyra-Projet)
+
+## 🙏 Remerciements
+
+- Alyra pour la formation
+- Les formateurs pour leur accompagnement
+- La communauté open source
 
 ---
-*Note : Ce projet est à but pédagogique dans le cadre d'une certification professionnelle.*
+*Projet développé dans le cadre de la certification Développeur IA - Juillet 2025*

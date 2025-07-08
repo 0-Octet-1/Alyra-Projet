@@ -12,3 +12,4 @@ des analogies
 vulgarisez
 pyramide inversée
 données concretes
+Acroche -> probleme->Solution->Valeur Unique->Preuves->Appel à l'action
